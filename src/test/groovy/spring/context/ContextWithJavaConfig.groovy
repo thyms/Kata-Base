@@ -19,5 +19,6 @@ class ContextWithJavaConfig  extends Specification {
 		car != null
 		engine != null
 		engine == car.getEngine()
+		
 	}
 }
