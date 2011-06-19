@@ -8,7 +8,6 @@ import spock.lang.Specification
  *
  */
 class ContextWithJavaConfig  extends Specification {
-	
 	def "should generate objects"() {
 		when:
 		def applicationContext = null
