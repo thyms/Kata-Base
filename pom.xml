@@ -6,6 +6,23 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Kata Base</name>
 
+	<properties>
+		<!-- encoding of project resources -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- plugin versions -->
+		<gmaven.version>1.3</gmaven.version>
+
+		<!-- Groovy version and Groovy major version for the compiler -->
+		<groovy.version>1.8.0</groovy.version>
+		<groovy.version.major>1.8</groovy.version.major>
+
+		<!-- dependency versions -->
+		<spock.version>0.5-groovy-1.8</spock.version>
+		<spock.maven.version>0.5-groovy-1.7</spock.maven.version>
+
+	</properties>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -19,9 +36,9 @@
 			<plugin>
 				<groupId>org.codehaus.gmaven</groupId>
 				<artifactId>gmaven-plugin</artifactId>
-				<version>1.3</version>
+				<version>${gmaven.version}</version>
 				<configuration>
-					<providerSelection>1.7</providerSelection>
+					<providerSelection>${groovy.version.major}</providerSelection>
 				</configuration>
 				<executions>
 					<execution>
@@ -34,7 +51,7 @@
 					<dependency>
 						<groupId>org.codehaus.gmaven.runtime</groupId>
 						<artifactId>gmaven-runtime-1.7</artifactId>
-						<version>1.3</version>
+						<version>${groovy.version.major}</version>
 						<exclusions>
 							<exclusion>
 								<groupId>org.codehaus.groovy</groupId>
@@ -45,14 +62,14 @@
 					<dependency>
 						<groupId>org.codehaus.groovy</groupId>
 						<artifactId>groovy-all</artifactId>
-						<version>1.7.5</version>
+						<version>${groovy.version}</version>
 					</dependency>
 				</dependencies>
 			</plugin>
 			<plugin>
 				<groupId>org.spockframework</groupId>
 				<artifactId>spock-maven</artifactId>
-				<version>0.5-groovy-1.7</version>
+				<version>${spock.maven.version}</version>
 				<executions>
 					<execution>
 						<goals>
@@ -65,11 +82,26 @@
 	</build>
 
 	<dependencies>
+		<!-- Groovy library -->
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>${groovy.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Spock -->
 		<dependency>
 			<groupId>org.spockframework</groupId>
 			<artifactId>spock-core</artifactId>
-			<version>0.5-groovy-1.8</version>
+			<version>${spock.version}</version>
 			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.codehaus.groovy</groupId>
+					<artifactId>groovy-all</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 	</dependencies>
 </project>
