@@ -22,7 +22,7 @@
 		<spock.maven.version>0.5-groovy-1.7</spock.maven.version>
 
 	</properties>
-
+ 
 	<build>
 		<plugins>
 			<plugin>
