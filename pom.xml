@@ -17,12 +17,12 @@
 		<groovy.version>1.8.0</groovy.version>
 		<groovy.version.major>1.8</groovy.version.major>
 
-		<!-- dependency versions -->
+		<!-- dependency version -->
 		<spock.version>0.5-groovy-1.8</spock.version>
 		<spock.maven.version>0.5-groovy-1.7</spock.maven.version>
 
 	</properties>
-
+ 	
 	<build>
 		<plugins>
 			<plugin>
