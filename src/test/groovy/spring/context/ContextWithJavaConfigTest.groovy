@@ -7,7 +7,7 @@ import spock.lang.Specification
  * @author Deniz KALFA
  *
  */
-class ContextWithJavaConfig  extends Specification {
+class ContextWithJavaConfigTest  extends Specification {
 	def "should generate objects"() {
 		when:
 		def applicationContext = null
